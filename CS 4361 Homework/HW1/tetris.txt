@@ -1,0 +1,317 @@
+public void paint(Graphics g) {
+    Dimension d = getSize();
+    int maxX = d.width - 1, maxY = d.height - 1;
+
+    // Board
+    g.setColor(Color.black);
+    g.drawRect(0, 0, maxX - 500, maxY);
+
+    // Green Shape
+    g.setColor(Color.green);
+    g.fillRect(maxX - 700, maxY - 700, 25, 25);
+    g.fillRect(maxX - 725, maxY - 700, 25, 25);
+    g.fillRect(maxX - 700, maxY - 675, 25, 25);
+    g.fillRect(maxX - 725, maxY - 675, 25, 25);
+
+    // Green Shape Lines
+    g.setColor(Color.black);
+    g.drawRect(maxX - 700, maxY - 700, 25, 25);
+    g.drawRect(maxX - 725, maxY - 700, 25, 25);
+    g.drawRect(maxX - 700, maxY - 675, 25, 25);
+    g.drawRect(maxX - 725, maxY - 675, 25, 25);
+
+    // Yellow Shape
+    g.setColor(Color.yellow);
+    g.fillRect(maxX - 575, maxY - 25, 25, 25);
+    g.fillRect(maxX - 600, maxY - 25, 25, 25);
+    g.fillRect(maxX - 575, maxY - 50, 25, 25);
+    g.fillRect(maxX - 550, maxY - 50, 25, 25);
+
+    // Yellow Shape Lines
+    g.setColor(Color.black);
+    g.drawRect(maxX - 575, maxY - 25, 25, 25);
+    g.drawRect(maxX - 600, maxY - 25, 25, 25);
+    g.drawRect(maxX - 575, maxY - 50, 25, 25);
+    g.drawRect(maxX - 550, maxY - 50, 25, 25);
+
+    // Blue Shape
+    g.setColor(Color.blue);
+    g.fillRect(maxX - 550, maxY - 25, 25, 25);
+    g.fillRect(maxX - 525, maxY - 50, 25, 25);
+    g.fillRect(maxX - 525, maxY - 75, 25, 25);
+    g.fillRect(maxX - 525, maxY - 25, 25, 25);
+
+    // Blue Shape Lines
+    g.setColor(Color.black);
+    g.drawRect(maxX - 550, maxY - 25, 25, 25);
+    g.drawRect(maxX - 525, maxY - 50, 25, 25);
+    g.drawRect(maxX - 525, maxY - 75, 25, 25);
+    g.drawRect(maxX - 525, maxY - 25, 25, 25);
+
+    // Red Shape
+    g.setColor(Color.red);
+    g.fillRect(maxX - 400, maxY - 725, 25, 25);
+    g.fillRect(maxX - 400, maxY - 750, 25, 25);
+    g.fillRect(maxX - 425, maxY - 725, 25, 25);
+    g.fillRect(maxX - 450, maxY - 725, 25, 25);
+
+    // Red Shape Lines
+    g.setColor(Color.black);
+    g.drawRect(maxX - 475, maxY - 775, 150, 100);
+    g.drawRect(maxX - 400, maxY - 725, 25, 25);
+    g.drawRect(maxX - 400, maxY - 750, 25, 25);
+    g.drawRect(maxX - 425, maxY - 725, 25, 25);
+    g.drawRect(maxX - 450, maxY - 725, 25, 25);
+
+    Font font = new Font("TimesRoman", Font.BOLD, 40);
+    Font stringFont = new Font("TimesRoman", Font.BOLD, 30);
+
+    // Level, Lines, Score Strings
+    g.setColor(Color.black);
+    g.setFont(stringFont);
+    g.drawString("Level:", maxX - 475, maxY - 500);
+    g.drawString("1", maxX - 375, maxY - 500);
+    g.drawString("Lines:", maxX - 475, maxY - 550);
+    g.drawString("0", maxX - 375, maxY - 550);
+    g.drawString("Score:", maxX - 475, maxY - 600);
+    g.drawString("0", maxX - 375, maxY - 600);
+
+    // Quit Button
+    g.setColor(Color.black);
+    g.setFont(font);
+    g.drawRect(maxX - 475, maxY - 200, 180, 70);
+    g.drawString("Quit", maxX - 425, maxY - 150);
+  }
+
+  Dimension d = getSize();
+  int maxX = d.width - 1, maxY = d.height - 1;
+  Graphics g = getGraphics();
+  Font font = new Font("TimesRoman", Font.BOLD, 40);
+
+  @Override
+  public void mouseDragged(MouseEvent e) {
+  }
+
+  @Override
+  public void mouseMoved(MouseEvent e) {
+    // Pause Button
+    g.setColor(Color.blue);
+    g.setFont(font);
+    g.drawRect(100, 400, 200, 70);
+    g.drawString("Pause", 150, 450);
+  }
+
+  @Override
+  public void mouseClicked(MouseEvent e) {
+  }
+
+  @Override
+  public void mousePressed(MouseEvent e) {
+  }
+
+  @Override
+  public void mouseReleased(MouseEvent e) {
+  }
+
+  @Override
+  public void mouseEntered(MouseEvent e) {
+  }
+
+  @Override
+  public void mouseExited(MouseEvent e) {
+  }
+
+  Tetris() {
+    addMouseMotionListener(this);
+    setSize(1000, 1000);
+    setLayout(null);
+    setVisible(true);
+    // setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+  }
+
+  public static void main(String[] args) {
+    new Tetris();
+  }
+
+import java.awt.*;
+import java.awt.event.*;
+
+public class Tetris extends Frame implements MouseMotionListener {
+  public void paint(Graphics g) {
+    // Board
+    g.setColor(Color.black);
+    g.drawRect(700, 30, 510, 1010);
+
+    // Green Shape
+    g.setColor(Color.green);
+    g.fillRect(930, 200, 30, 30);
+    g.setColor(Color.green);
+    g.fillRect(960, 200, 30, 30);
+    g.setColor(Color.green);
+    g.fillRect(930, 230, 30, 30);
+    g.setColor(Color.green);
+    g.fillRect(960, 230, 30, 30);
+    // Green Shape Lines
+    g.setColor(Color.black);
+    g.drawRect(930, 200, 30, 30);
+    g.drawRect(960, 200, 30, 30);
+    g.drawRect(930, 230, 30, 30);
+    g.drawRect(960, 230, 30, 30);
+
+    // Yellow Shape
+    g.setColor(Color.yellow);
+    g.fillRect(1090, 980, 30, 30);
+    g.setColor(Color.yellow);
+    g.fillRect(1120, 980, 30, 30);
+    g.setColor(Color.yellow);
+    g.fillRect(1120, 950, 30, 30);
+    g.setColor(Color.yellow);
+    g.fillRect(1150, 950, 30, 30);
+    // Yellow Shape Lines
+    g.setColor(Color.black);
+    g.drawRect(1090, 980, 30, 30);
+    g.drawRect(1120, 980, 30, 30);
+    g.drawRect(1120, 950, 30, 30);
+    g.drawRect(1150, 950, 30, 30);
+
+    // Blue Shape
+    g.setColor(Color.blue);
+    g.fillRect(1150, 980, 30, 30);
+    g.setColor(Color.blue);
+    g.fillRect(1180, 980, 30, 30);
+    g.setColor(Color.blue);
+    g.fillRect(1180, 950, 30, 30);
+    g.setColor(Color.blue);
+    g.fillRect(1180, 920, 30, 30);
+    // Blue Shape Lines
+    g.setColor(Color.black);
+    g.drawRect(1150, 980, 30, 30);
+    g.drawRect(1180, 980, 30, 30);
+    g.drawRect(1180, 950, 30, 30);
+    g.drawRect(1180, 920, 30, 30);
+
+    // Red Shape
+    g.setColor(Color.red);
+    g.fillRect(1360, 230, 30, 30);
+    g.fillRect(1390, 230, 30, 30);
+    g.fillRect(1420, 230, 30, 30);
+    g.fillRect(1420, 200, 30, 30);
+
+    // Red Shape Lines
+    g.setColor(Color.black);
+    g.drawRect(1300, 150, 200, 150);
+    g.drawRect(1360, 230, 30, 30);
+    g.drawRect(1390, 230, 30, 30);
+    g.drawRect(1420, 230, 30, 30);
+    g.drawRect(1420, 200, 30, 30);
+
+    Font font = new Font("TimesRoman", Font.BOLD, 40);
+    Font stringFont = new Font("TimesRoman", Font.BOLD, 30);
+
+    // Level, Lines, Score Strings
+    g.setColor(Color.black);
+    g.setFont(stringFont);
+    g.drawString("Level:", 1300, 500);
+    g.drawString("1", 1400, 500);
+    g.drawString("Lines:", 1300, 550);
+    g.drawString("0", 1400, 550);
+    g.drawString("Score:", 1300, 600);
+    g.drawString("0", 1400, 600);
+
+    // Quit Button
+    g.setColor(Color.black);
+    g.setFont(font);
+    g.drawRect(1300, 800, 180, 70);
+    g.drawString("Quit", 1350, 850);
+  }
+
+  Graphics g = getGraphics();
+  Font font = new Font("TimesRoman", Font.BOLD, 40);
+
+  @Override
+  public void mouseDragged(MouseEvent e) {
+  }
+
+  @Override
+  public void mouseMoved(MouseEvent e) {
+    // Pause Button
+    g.setColor(Color.blue);
+    g.setFont(font);
+    g.drawRect(500, 400, 200, 70);
+    g.drawString("Pause", 550, 450);
+  }
+
+  Tetris() {
+    addMouseMotionListener(this);
+    setSize(1000, 1000);
+    setLayout(null);
+    setVisible(true);
+    // setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+  }
+
+  public static void main(String[] args) {
+    new Tetris();
+  }
+}
+
+    JButton button = new JButton("QUIT");
+
+    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    addMouseListener(this);
+
+    setContentPane(button);
+    setSize(180, 70);
+    button.addActionListener(e -> {
+      dispose();
+    });
+
+@Override
+  public void mouseClicked(MouseEvent e) {
+  }
+
+  @Override
+  public void mousePressed(MouseEvent e) {
+  }
+
+  @Override
+  public void mouseReleased(MouseEvent e) {
+  }
+
+  @Override
+  public void mouseEntered(MouseEvent e) {
+    Graphics g = getGraphics();
+    Font font = new Font("TimesRoman", Font.BOLD, 40);
+
+    // Pause Button
+    g.setColor(Color.blue);
+    g.setFont(font);
+    g.drawRect(175, 400, 200, 70);
+    g.drawString("Pause", 225, 450);
+  }
+
+  @Override
+  public void mouseExited(MouseEvent e) {
+  }
+
+button.setBounds(400, 900, 150, 100);
+    frame.add(button);
+    button.addActionListener(e -> {
+      frame.dispose();
+    });
+    frame.setLocationRelativeTo(null);
+
+    Tetris t = new Tetris();
+    JFrame frame = new JFrame();
+    JButton button = new JButton("QUIT");
+
+    frame.add(t);
+    frame.setSize(1800, 2000);
+    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    frame.setLayout(new GridLayout());
+    button.setBounds(400, 900, 150, 100);
+    frame.add(button);
+    button.addActionListener(e -> {
+      frame.dispose();
+    });
+    frame.setLocationRelativeTo(null);
+    frame.setVisible(true);
